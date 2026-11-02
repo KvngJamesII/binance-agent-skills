@@ -75,10 +75,20 @@ Treat every launch as high risk: most fail and liquidity can vanish.
 
 ## Honest limitations (state these to the user)
 
-- Expected time per proof is measured in days on an ordinary CPU at recent difficulty
-  levels, and difficulty rises as issuance progresses. There is no guaranteed time to
-  reward and no guaranteed value for the reward.
+- One measurement in late October 2026 estimated days per proof on an ordinary CPU at
+  the difficulty seen then. That is a dated measurement, not a current prediction:
+  difficulty rises as issuance progresses, so read the live target before setting
+  expectations. There is no guaranteed time to reward and no guaranteed value for the
+  reward.
 - Gas, VPS and electricity costs are real and can exceed the value of mined tokens.
 - A found proof is not reserved: it can be superseded before submission.
 - Never move wallet credentials or sessions to a rented machine to mine faster. Hashing
   is local and unsigned; only the final submission touches the wallet.
+
+## Sources
+
+- ComputeRoll mining mechanics and official agent instructions: https://computeroll.com/mining
+- ComputeRoll reference CPU miner source: https://computeroll.com/agent-miner-source.txt
+- ComputeRoll protocol ABI/config: https://computeroll.com/agent-release.json
+- OpenFour "Binance Agent ID Exclusive" launch mechanics: https://github.com/four-meme-community/openfour-docs/blob/main/docs/mechanisms/binance-agent-id-exclusive.md
+- Binance Agentic Wallet CLI: https://www.npmjs.com/package/@binance/agentic-wallet

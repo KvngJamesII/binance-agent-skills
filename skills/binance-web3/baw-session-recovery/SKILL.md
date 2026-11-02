@@ -13,9 +13,10 @@ metadata:
 
 # Recover a dropped baw wallet session
 
-Sessions between the `baw` CLI and the Binance app expire. Existing listings and on-chain
-assets are unaffected; only new writes (signing, sending) stop working. The fix is a
-fresh pairing; there is no local repair.
+Sessions between the `baw` CLI and the Binance app expire. In observed operation,
+existing listings and on-chain assets were unaffected; only new writes (signing, sending)
+stopped. The supported recovery is a fresh pairing through the official sign-in flow
+below.
 
 ## Flow
 
@@ -47,3 +48,8 @@ fresh pairing; there is no local repair.
   to send it.
 - Do not attempt to keep sessions alive with automated pings; Binance controls session
   lifetime server-side.
+
+## Sources
+
+- Official authentication flow and failure modes: https://github.com/binance/binance-skills-hub/blob/main/skills/binance-web3/binance-agentic-wallet/references/authentication.md
+- Binance Agentic Wallet CLI: https://www.npmjs.com/package/@binance/agentic-wallet

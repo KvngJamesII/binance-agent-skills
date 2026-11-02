@@ -26,6 +26,9 @@ no credentials: `element-sdk` attaches its own bundled application credential to
 - Element's chain id mapping differs from raw chain ids: BSC (chain id 56) is chainMId
   201. Use `getChainMId` from `@element-js/wallets` instead of hardcoding.
 
+The script checks only the items you configure in the watchlist. It does not scan or
+discover a wallet's full holdings; add each collection and token id you want tracked.
+
 Run `npm install` in this skill's `scripts/` directory once, copy
 `watchlist.example.json` to `watchlist.json`, fill in the collections and token ids, then:
 
@@ -49,3 +52,7 @@ price: a "0.02" listing priced in USDT is not 0.02 BNB.
   send "nothing changed" digests on a timer.
 - Keep checks to a sane cadence. Polling public endpoints aggressively can get rate
   limited; hourly is a safe default unless the user asks for faster.
+
+## Sources
+
+- element-sdk on npm (read endpoints used by the script): https://www.npmjs.com/package/element-sdk

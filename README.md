@@ -33,8 +33,12 @@ supported-agents list for the current set). Requires Node.js 22+.
 The write paths use two public building blocks: Binance's official Agentic Wallet CLI
 (`baw`, npm `@binance/agentic-wallet`) for signing, and Element's public `element-sdk`
 npm package for order building and the exchange API. Mining uses each project's own
-published reference tooling. No personal API keys, seeds or credentials are needed or
-accepted anywhere in this pack.
+published reference tooling.
+
+You sign `baw` into your own Binance account to use the wallet skills. Beyond that
+sign-in, no private keys, seed phrases or personal API keys are needed or accepted
+anywhere in this pack: scripts never take credentials as input, and `element-sdk`
+attaches its own bundled application credential to API requests.
 
 ## Safety principles
 
@@ -59,6 +63,27 @@ skills/
 
 Each skill is a folder with a `SKILL.md` (YAML frontmatter + instructions) following the
 open agent-skills format.
+
+## Current limitations
+
+- BNB Chain (BSC) mainnet only; no other chains.
+- The listing scripts cover ERC-721 fixed-price listings. ERC-1155, offers and auctions
+  are not covered by the scripts.
+- The listing flow is verified against element-sdk 5.3.3 (pinned). Its bundled-auth
+  behavior is observed, not a guaranteed permanent interface.
+- Portfolio watch scripts check a watchlist you configure; they do not discover a
+  wallet's full holdings, and project-owned markets are covered as guidance, not
+  integrations.
+- The mining skill documents the workflow and points at the project's own published
+  reference miner; it ships no miner of its own and promises no reward rate or value.
+
+## Sources
+
+- skills installer (`npx skills add`): https://github.com/vercel-labs/skills
+- Binance Skills Hub (official ecosystem skills): https://github.com/binance/binance-skills-hub
+- element-sdk: https://www.npmjs.com/package/element-sdk
+- Binance Agentic Wallet CLI: https://www.npmjs.com/package/@binance/agentic-wallet
+- ComputeRoll mining docs: https://computeroll.com/mining
 
 ## License
 

@@ -32,19 +32,24 @@ Binance Agentic Wallet, accepted by Element's exchange API and visible on the as
 ## How authentication works (important)
 
 `element-sdk` signs its API requests with its own bundled application credential
-automatically. Do not pass an empty or invented API key: overriding the built-in auth is
-the most common cause of failed requests. No personal Element API key and no Element
-account are needed. This is observed behavior of element-sdk 5.3.3, not a guaranteed
-permanent interface; if a request starts failing with auth errors, re-check against the
-current SDK before assuming the flow broke elsewhere.
+automatically. Do not pass an empty or invented API key: overriding the built-in auth
+can break authentication. No personal Element API key and no Element account are needed.
+This is observed behavior of element-sdk 5.3.3, not a guaranteed permanent interface;
+if a request starts failing with auth errors, re-check against the current SDK before
+assuming the flow broke elsewhere.
 
 ## Fees that must be in the order
 
 Every sell order must carry Element's platform fee, currently 200 bps (2%) to Element's
-platform fee recipient on BSC. A fee-zero order is rejected by the exchange API at post
-time. The scripts set both values as constants; verify them against any live order before
-relying on them (fetch one with `check-listing.mjs` and read the fee fields). Collection
-royalties are optional and added on top.
+platform fee recipient on BSC. A fee-zero order was rejected by the exchange API in
+testing. The scripts set both values as constants; verify them against any live order
+before relying on them (fetch one with `check-listing.mjs` and read the fee fields).
+
+Some collections also set a creator royalty. Where one applies, it belongs in the order's
+fee structure and is paid from proceeds: do not zero out or reduce a collection's
+royalty to lower fees, because orders whose fees do not match the collection's registered
+terms can be rejected. The verified test collection had no royalty (0 bps); the scripts'
+royalty options exist so collections that have one are listed correctly.
 
 ## Steps
 
@@ -88,3 +93,10 @@ royalties are optional and added on top.
 - Never change an existing listing's price or cancel it without explicit user approval.
 - Never accept or embed API keys, seeds or private keys; this flow needs none.
 - Do not promise sale proceeds or floor outcomes. A listing is an offer, not a sale.
+
+## Sources
+
+- element-sdk on npm: https://www.npmjs.com/package/element-sdk (5.3.3 pinned)
+- Element marketplace: https://element.market
+- Binance Agentic Wallet CLI (`baw`): https://www.npmjs.com/package/@binance/agentic-wallet
+- baw command reference (official skill docs): https://github.com/binance/binance-skills-hub/tree/main/skills/binance-web3/binance-agentic-wallet

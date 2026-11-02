@@ -45,3 +45,8 @@ metadata:
   route, and vetting status. Let the user decide.
 - Phishing clones of popular mints are common. If the link came from a DM, a reply guy or
   a "too fast" countdown, treat it as hostile until cross-checked.
+
+## Sources
+
+- Binance Skills Hub (official ecosystem skills and conventions): https://github.com/binance/binance-skills-hub
+- OpenFour Agent ID exclusive launch docs: https://github.com/four-meme-community/openfour-docs/blob/main/docs/mechanisms/binance-agent-id-exclusive.md
