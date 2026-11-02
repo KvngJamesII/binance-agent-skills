@@ -1,0 +1,12 @@
+{
+  "name": "element-nft-listing-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Build, sign (via Binance Agentic Wallet CLI) and post gasless NFT listings on Element, BNB Chain.",
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "element-sdk": "5.3.3",
+    "ethers": "^5.7.2",
+    "ox": "^1.8.0"
+  }
+}

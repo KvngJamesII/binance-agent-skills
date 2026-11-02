@@ -1,0 +1,11 @@
+{
+  "name": "nft-portfolio-watch-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Read-only floor and listing checks for BNB Chain NFTs on Element.",
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "element-sdk": "5.3.3",
+    "ox": "^1.8.0"
+  }
+}
