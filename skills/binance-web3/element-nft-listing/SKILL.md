@@ -6,7 +6,7 @@ description: |
   sell/list an NFT, check whether a listing is live, or build a batch of listings.
   Listings are off-chain signed orders: no gas and no Element account or personal API key.
 metadata:
-  author: monaqr
+  author: KvngJamesII
   version: "1.0.0"
   license: MIT
 ---

@@ -7,7 +7,7 @@ description: |
   collection, or get alerted to price moves. Covers only reads; use element-nft-listing
   for any write.
 metadata:
-  author: monaqr
+  author: KvngJamesII
   version: "1.0.0"
   license: MIT
 ---

@@ -6,7 +6,7 @@ description: |
   mints or airdrop claims, or evaluate whether a mint link is legitimate. Covers research
   and vetting; minting itself is a wallet write and always needs explicit user approval.
 metadata:
-  author: monaqr
+  author: KvngJamesII
   version: "1.0.0"
   license: MIT
 ---

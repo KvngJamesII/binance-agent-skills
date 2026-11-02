@@ -6,7 +6,7 @@ description: |
   cannot start because the session expired. Covers the reconnect flow, stale pairing
   codes, and the "app says connected but CLI is not" intermediate state.
 metadata:
-  author: monaqr
+  author: KvngJamesII
   version: "1.0.0"
   license: MIT
 ---
