@@ -39,13 +39,13 @@ for (const entry of watchlist) {
         chainMId, standard: 'element-ex-v3',
         contractAddress: entry.collection.toLowerCase(), tokenId: String(tokenId), side: 1
       });
+      const live = !!(best && best.isValid && Number(best.price) > 0);
       rows.push({
         label: entry.label || entry.collection,
         tokenId: String(tokenId),
-        listed: !!best,
-        priceBnb: best?.price ?? null,
-        priceUsd: best?.priceUsd ?? null,
-        valid: best?.isValid ?? null
+        listed: live,
+        priceBnb: live ? best.price : null,
+        priceUsd: live ? best.priceUsd : null
       });
     } catch (e) {
       rows.push({ label: entry.label || entry.collection, tokenId: String(tokenId), listed: null, error: String(e.message || e) });

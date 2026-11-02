@@ -32,6 +32,12 @@ const { getTypedData } = require('element-sdk/lib/src/elementEx/batchSignedERC72
 const { ElementExAddress, ElementExHelperAddress } = require('element-sdk/lib/src/contracts/config.js');
 const { getChainMId } = require('@element-js/wallets');
 
+// element-sdk 5.3.3 reads window.localStorage in a few code paths (browser-first
+// package). Provide a minimal stub so those paths work under Node.
+if (typeof globalThis.window === 'undefined') {
+  globalThis.window = { localStorage: { getItem: () => null, setItem: () => {} } };
+}
+
 const CHAIN_ID = 56; // BNB Chain mainnet
 const ZERO = '0x0000000000000000000000000000000000000000';
 
